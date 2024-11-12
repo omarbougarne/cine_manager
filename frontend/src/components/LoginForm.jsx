@@ -19,7 +19,7 @@ function LoginForm(){
             alert('Login Successful');
             navigate('/account')
         })
-        .catc((error)=>{
+        .catch((error)=>{
             console.error("Error loging in", eror);
             
         }

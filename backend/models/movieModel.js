@@ -7,12 +7,7 @@ const movieSchema = new mongoose.Schema({
     title: { type: String, required: true },
     genre: { type: String, required: true },
     description: { type: String },
-    releaseDate: { type: Date, required: true },
-    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
-    ratings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Rating' }],
-    videoUrl: { type: String, required: false },
-    imageUrl: { type: String, required: false },  
-    // createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
+    releaseDate: { type: Date, required: true }
 });
 
 
@@ -25,9 +20,6 @@ const validateMovie = (movie) => {
         genre: Joi.string().min(3).max(100).required(),
         description: Joi.string().max(1000).optional(),
         releaseDate: Joi.date().required(),
-        // videoUrl: Joi.string().uri().required(),   
-        // imageUrl: Joi.string().uri().required(),  
-        // createdBy: Joi.objectId().required(),  
         rating: Joi.number().min(0).max(10).optional(),
         comments: Joi.array().items(Joi.objectId()).optional()
     });

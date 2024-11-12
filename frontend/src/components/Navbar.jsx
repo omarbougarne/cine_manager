@@ -19,7 +19,7 @@ function Navbar() {
                         <Link to='/account'><li>Account</li></Link>
                         <Link to='/add-movie'><li>Add Movie</li></Link>
                         <Link to='/rooms'><li>Show Rooms</li></Link>
-                        <Link to='/sessions'><li>Show Sessions</li></Link> {/* Added link for Show Sessions */}
+                        <Link to='/sessions'><li>Show Sessions</li></Link> 
                         <li><button onClick={handleSignOut}>Sign Out</button></li>
                     </>
                 ) : (

@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import SignUpPage from './pages/SignUpPage';
 import LoginForm from './pages/LoginPage';
 import Movies from './pages/Movies'; 
-import AddMovie from './pages/AddMovies';
+import AddMovie from './pages/AddMovie';
 import RoomList from './pages/RoomList'; 
 import SessionList from './pages/SessionList'; 
 import AddSession from './pages/AddSession'; 

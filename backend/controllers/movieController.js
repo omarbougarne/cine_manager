@@ -13,6 +13,20 @@ const getMovies = async (req, res) => {
     }
 };
 
+const getMovie = async (req, res) => {
+    try {
+        const { id } = req.params; 
+        const movie = await Movie.findOne({ _id: id });
+        if (!movie) {
+            return res.status(404).send({ message: "Movie not found" });
+        }
+        res.status(200).send(movie);
+    } catch (err) {
+        res.status(500).send({ error: err.message });
+    }
+};
+
+
 
 
 
@@ -32,8 +46,6 @@ const createMovie = async (req, res) => {
             genre,
             description,
             releaseDate,
-            videoUrl,
-            imageUrl: req.file.path
         };
 
         
@@ -90,7 +102,8 @@ module.exports = {
     getMovies,
     createMovie,
     updateMovie,
-    deleteMovie
+    deleteMovie,
+    getMovie
 };
 
 

@@ -15,7 +15,7 @@ function SignUpForm(){
     const handleSubmit = (event) => {
         event.preventDefault();
         axios
-        .post('http://localhost:5000/auth/register', {firstName, lastName, email, password})
+        .post('http://localhost:5000/api/auth/register', {firstName, lastName, email, password})
         .then(()=> {
             alert('registration succeded')
             setFirstName('');
@@ -30,7 +30,7 @@ function SignUpForm(){
     })
     };
     return(
-        <form className="text-center border rounded-lg w-[600px] h-[400px] p-9" onclick={handleSubmit}>
+        <form className="text-center border rounded-lg w-[600px] h-[400px] p-9" onClick={handleSubmit}>
             <FormInput
             label = 'First Name'
             type = 'text'
